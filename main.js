@@ -56,7 +56,7 @@ function date()
 function welcomeMessage() {
     var today = new Date();
     var h = today.getHours() + 1;
-    var userName = "Matthew";
+    var userName = "USERNAME";
     var message = String();
     if (h <= 12 && h >= 6){
         message = "Good Morning, ";
@@ -77,9 +77,6 @@ function weatherBalloon( cityID ) {
     .then(function(resp) { return resp.json() })
     .then(function(data) {
         let celcius = Math.round(parseFloat(data.main.temp)-273.15);
-        // document.getElementById('description').innerHTML = data.weather[0].description;
-        // document.getElementById('temp').innerHTML = celcius + '&deg;';
-        // document.getElementById('location').innerHTML = data.name;
         getId("weather").innerHTML = "Todays weather in " + data.name + " is " + data.weather[0].description + " with a temp of " + celcius + "&deg C"; 
     });
 }
@@ -88,5 +85,5 @@ function main(){
     time();
     date();
     welcomeMessage()
-    weatherBalloon(2639272)
+    weatherBalloon(YOUR ID HERE)
 }
